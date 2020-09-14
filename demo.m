@@ -29,6 +29,11 @@ n_iterations = 1000;
 % trained parameters for future predictions
 trained_parameters = model(X, Y, n_x, n_h, n_y, n_iterations, learning_rate);
 
+% Make a prediction for a new example(generally unseen) 
+x_new = [0; 1];
+y_pred = predict(x_new, trained_parameters);
+fprintf('Model prediction for %d XOR %d is %d\n', x_new(1), x_new(2), y_pred)
+
 %
 % AUTHOR        Kitsios Konstantinos        kitsiosk@ece.auth.gr
 %

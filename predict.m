@@ -5,11 +5,11 @@
 
 function y_pred = predict(X, parameters)
     % Forward pass the input
-    A1, A2 = forward_prop(X, parameters);
+    [~, A2] = forward_prop(X, parameters);
     
     % All predictions that have activation value grater that 0.5 are
     % consindered as positive label(1), else negative label(0)
     y_pred = A2;
-    y_pred[A2 > 0.5] = 1;
-    y_pred[A2 <= 0.5] = 0;
+    y_pred(A2 > 0.5) = 1;
+    y_pred(A2 <= 0.5) = 0;
 end
